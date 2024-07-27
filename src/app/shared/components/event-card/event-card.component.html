@@ -1,0 +1,89 @@
+<mat-card class="!bg-white relative" appearance="outlined">
+  <img
+    mat-card-image
+    class="max-h-[250px] object-cover"
+    src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+    alt="Photo of a Shiba Inu"
+  />
+  <div class="p-5 flex items-center justify-between">
+    <div class="flex flex-col gap-5">
+      <mat-card-title class="font-bold text-xl">{{
+        eventData.event_name
+      }}</mat-card-title>
+      <mat-card-content class="">
+        <div class="flex items-center gap-3">
+          <span
+            ><svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 10.1433C4 5.64588 7.58172 2 12 2C16.4183 2 20 5.64588 20 10.1433C20 14.6055 17.4467 19.8124 13.4629 21.6744C12.5343 22.1085 11.4657 22.1085 10.5371 21.6744C6.55332 19.8124 4 14.6055 4 10.1433Z"
+                stroke="#0C0F14"
+                stroke-width="1.5"
+              />
+              <circle
+                cx="12"
+                cy="10"
+                r="3"
+                stroke="#0C0F14"
+                stroke-width="1.5"
+              />
+            </svg>
+          </span>
+
+          <p>Event Location</p>
+        </div>
+        <div class="flex items-center gap-3 mt-3">
+          <span
+            ><svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.99999 3.01758C9.58578 3.01758 9.24999 2.68179 9.24999 2.26758C9.24999 1.85336 9.58578 1.51758 9.99999 1.51758H13.5355C13.9497 1.51758 14.2855 1.85336 14.2855 2.26758C14.2855 2.68179 13.9497 3.01758 13.5355 3.01758H9.99999Z"
+                fill="black"
+              />
+              <path
+                d="M6.53033 3.46948C6.82322 3.76238 6.82322 4.23725 6.53033 4.53014L4.03033 7.03014C3.73744 7.32304 3.26256 7.32304 2.96967 7.03014C2.67678 6.73725 2.67678 6.26238 2.96967 5.96948L5.46967 3.46948C5.76256 3.17659 6.23744 3.17659 6.53033 3.46948Z"
+                fill="black"
+              />
+              <path
+                d="M12 5.74981C7.99594 5.74981 4.75 8.99575 4.75 12.9998C4.75 17.0039 7.99594 20.2498 12 20.2498C16.0041 20.2498 19.25 17.0039 19.25 12.9998C19.25 12.5856 19.5858 12.2498 20 12.2498C20.4142 12.2498 20.75 12.5856 20.75 12.9998C20.75 17.8323 16.8325 21.7498 12 21.7498C7.16751 21.7498 3.25 17.8323 3.25 12.9998C3.25 8.16732 7.16751 4.24981 12 4.24981C12.4142 4.24981 12.75 4.5856 12.75 4.99981C12.75 5.41403 12.4142 5.74981 12 5.74981Z"
+                fill="black"
+              />
+              <path
+                d="M17.1882 8.36407C17.4204 8.0655 17.394 7.64074 17.1265 7.37329C16.8591 7.10583 16.4343 7.07938 16.1357 7.3116L12.9658 9.77708L10.8944 11.2567C10.4519 11.5727 10.1893 12.083 10.1893 12.6268C10.1893 13.5566 10.9432 14.3105 11.873 14.3105C12.4168 14.3105 12.9271 14.0479 13.2431 13.6054L14.7227 11.534L17.1882 8.36407Z"
+                fill="black"
+              />
+            </svg>
+          </span>
+          <p>Event Time</p>
+        </div>
+      </mat-card-content>
+    </div>
+    <div class="" [innerHTML]="eventData.date | eventDateFormatter"></div>
+  </div>
+  <div class="flex items-center justify-between px-5 pb-5">
+    <p class="text-green-700 flex items-center">
+      <span
+        class="w-[6px] h-[6px] rounded-full bg-green-600 inline-block"
+      ></span
+      >&nbsp;Live
+    </p>
+    <p class="font-medium">Free</p>
+  </div>
+  <div class="absolute top-5 right-5">
+    <button
+      class="!bg-white flex items-center justify-center w-[2rem] h-[2rem] !rounded-full"
+    >
+      <mat-icon class="text-secondary">more_horiz</mat-icon>
+    </button>
+  </div>
+</mat-card>

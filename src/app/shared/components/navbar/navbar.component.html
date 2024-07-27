@@ -1,0 +1,53 @@
+<div class="sticky top-0 left-0 bg-white z-[5]">
+  <div class="absolute right-0 top-0 w-[30%] bg-[#800000] h-full z-[-1]"></div>
+  <nav
+    class="py-5 w-[90%] mx-auto max-w-[1440px] flex items-center justify-between"
+  >
+    <app-logo></app-logo>
+    <ul
+      class="!text-base flex items-center gap-10 *:capitalize *:hover:cursor-pointer"
+    >
+      <li><a routerLink="/" routerLinkActive="text-[#800000]">home</a></li>
+      <li>
+        <a routerLink="events" routerLinkActive="text-[#800000]"
+          >upcoming events</a
+        >
+      </li>
+      <li>
+        <a routerLink="join" routerLinkActive="text-[#800000]">joint events</a>
+      </li>
+      <li>
+        <button
+          mat-button
+          [matMenuTriggerFor]="menu"
+          disableRipple
+          class="!text-black !text-base !font-normal !hover:bg-transparent disable_hover"
+        >
+          more options
+          <mat-icon iconPositionEnd>expand_more</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" class="!bg-white">
+          <button mat-menu-item class="hover:bg-red-200">Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+      </li>
+    </ul>
+    <div class="flex items-center gap-5">
+      <button
+        routerLink="/auth/login"
+        mat-stroked-button
+        disableRipple
+        class="!text-white disable_hover !border-white"
+      >
+        Login
+      </button>
+      <button
+        routerLink="/auth/sign-up"
+        mat-flat-button
+        class="!bg-white !text-[#800000]"
+      >
+        Sign Up
+      </button>
+    </div>
+  </nav>
+</div>

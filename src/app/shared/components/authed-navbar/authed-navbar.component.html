@@ -1,0 +1,42 @@
+<div class="sticky top-0 left-0 bg-white z-[5] shadow-sm">
+  <nav
+    class="py-5 w-[90%] mx-auto max-w-[1440px] flex items-center justify-between"
+  >
+    <div class="items-center flex justify-center gap-5">
+      <app-logo></app-logo>
+      <div
+        class="flex w-[400px] items-center justify-center gap-2 border border-secondary/30 rounded-lg p-2 px-5"
+      >
+        <mat-icon class="!text-secondary/50">search</mat-icon>
+        <input
+          type="text"
+          class="w-full outline-none placeholder:text-normal"
+          placeholder="Search for more events"
+        />
+      </div>
+    </div>
+
+    <div class="flex items-center gap-5">
+      <span class="flex items-center">
+        <img
+          src="/profile_pic.png"
+          alt="profile photo"
+          class="w-[40px] h-[40px]"
+        />
+        <button
+          mat-button
+          [matMenuTriggerFor]="menu"
+          disableRipple
+          class="!text-black !text-base !font-normal !hover:bg-transparent disable_hover inline-flex"
+        >
+          Nora Ukechukwu
+          <mat-icon iconPositionEnd class="">expand_more</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" class="!bg-white">
+          <button mat-menu-item class="hover:bg-red-200">Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu></span
+      >
+    </div>
+  </nav>
+</div>
