@@ -1,0 +1,58 @@
+<div class="flex flex-col gap-7">
+  <h2 class="font-bold text-2xl border-b-[#EBEBEB] border-b pb-5">
+    Account Security
+  </h2>
+  <div class="pb-3">
+    <h4 class="font-bold text-xl">Password</h4>
+
+    <div class="flex flex-col gap-5 w-1/2 mt-5">
+      <div>
+        <label for="password">Enter current password</label>
+        <input
+          type="text"
+          class="border border-secondary/30 rounded-lg w-full p-3 mt-2 max-w-"
+          placeholder="password"
+        />
+      </div>
+      <div>
+        <label for="password">Enter new password</label>
+        <input
+          type="text"
+          class="border border-secondary/30 rounded-lg w-full p-3 mt-2 max-w-"
+          placeholder="password"
+        />
+      </div>
+      <div>
+        <label for="password">Confirm new password</label>
+        <input
+          type="text"
+          class="border border-secondary/30 rounded-lg w-full p-3 mt-2 max-w-"
+          placeholder="password"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="pb-3">
+    <h4 class="font-bold text-xl">Two factor authentication (2FA)</h4>
+    <p class="my-4 text-secondary/50">
+      Setting up a 2FA adds an extra layer of security to protect your account.
+    </p>
+    <p>
+      <mat-slide-toggle
+        >Enable Two-Factor authentication (2FA)</mat-slide-toggle
+      >
+    </p>
+  </div>
+  <div class="flex items-center justify-center gap-5 w-[80%]">
+    <button
+      mat-stroked-button
+      class="!text-primary disable_hover !border-primary"
+    >
+      Cancel
+    </button>
+
+    <button mat-flat-button class="!bg-primary !text-white my-3 py-3">
+      Save Changes
+    </button>
+  </div>
+</div>
