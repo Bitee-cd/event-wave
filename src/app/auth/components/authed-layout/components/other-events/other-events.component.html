@@ -1,0 +1,20 @@
+<section class="center my-10">
+  <div class="flex items-center justify-between">
+    <h1 class="text-2xl font-bold mb-5 items-center flex">
+      <mat-icon routerLink="..">arrow_back_ios</mat-icon> Explore other Events
+    </h1>
+    <button
+      (click)="openFilter()"
+      mat-stroked-button
+      disableRipple
+      class="!text-white disable_hover !bg-primary"
+    >
+      <mat-icon>filter_list</mat-icon>
+      Filters
+    </button>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 gap-y-10">
+    <app-event-card *ngFor="let event of events" [eventData]="event">
+    </app-event-card>
+  </div>
+</section>

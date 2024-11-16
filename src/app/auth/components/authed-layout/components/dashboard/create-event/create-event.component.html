@@ -1,0 +1,290 @@
+<div class="bg-white p-10 h-full flex flex-col">
+  <h5 class="text-3xl font-semibold text-center">Create an Event</h5>
+  <p class="text-center">{{ subtitle[step] }}</p>
+  <div class="grid grid-cols-4 gap-5 *:rounded-lg *:h-[12px] my-5">
+    <div
+      *ngFor="let item of [1, 2, 3, 4]"
+      [ngClass]="{ 'bg-primary': step >= item, 'bg-[#F2E6E6]': step < item }"
+      class="rounded-lg h-[12px]"
+    ></div>
+  </div>
+  <div class="flex-1 overflow-auto">
+    <!-- step 1  -->
+    <div
+      *ngIf="step === 1"
+      class="grid grid-cols-2 gap-10 *:rounded-lg w-[80%] mx-auto mt-5 *:p-5"
+    >
+      <input id="physical" class="hidden" type="radio" name="event_type" />
+      <input id="virtual" class="hidden" type="radio" name="event_type" />
+      <label
+        [class.border-primary]="event_type === 'virtual'"
+        [class.text-primary]="event_type === 'virtual'"
+        htmlFor="virtual"
+        (click)="onChangeEvent('virtual')"
+        class="border-[2px] cursor-pointer option-select-2"
+      >
+        <div class="">
+          <span class="flex items-center justify-center">
+            <svg
+              width="71"
+              height="72"
+              viewBox="0 0 71 72"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M66.0874 11.7238V3.69366C66.0874 1.73447 64.4935 0.140625 62.5343 0.140625H30.8108C28.8517 0.140625 27.2579 1.73447 27.2579 3.69366V11.7172H5.16019C2.58942 11.7172 0.498047 13.8087 0.498047 16.3793V58.9593C0.498047 61.53 2.58956 63.6214 5.16019 63.6214H20.7759L17.4427 69.3412C17.1367 69.8662 17.1329 70.4907 17.4322 71.0118C17.7326 71.5345 18.2909 71.8592 18.8895 71.8592H52.1114C52.7099 71.8592 53.2681 71.5345 53.5685 71.0121C53.868 70.491 53.8643 69.8666 53.5584 69.3413L50.2253 63.6214H65.8409C68.4116 63.6214 70.503 61.5299 70.503 58.9593V16.3793C70.5029 13.8914 68.5438 11.8524 66.0874 11.7238ZM29.5079 3.69366C29.5079 2.9752 30.0923 2.39062 30.8108 2.39062H62.5343C63.2528 2.39062 63.8374 2.97506 63.8374 3.69366V23.572C63.8374 24.2904 63.2528 24.8749 62.5343 24.8749H44.4938C44.2584 24.8749 44.0289 24.9487 43.8377 25.086L35.339 31.1884V25.9999C35.339 25.7015 35.2205 25.4154 35.0095 25.2044C34.7985 24.9934 34.5124 24.8749 34.214 24.8749H30.8108C30.0923 24.8749 29.5079 24.2904 29.5079 23.572V3.69366ZM5.16019 13.9672H27.2579V23.572C27.2579 25.531 28.8517 27.1249 30.8108 27.1249H33.089V33.3811C33.089 33.5881 33.1461 33.791 33.2539 33.9676C33.3618 34.1443 33.5163 34.2877 33.7004 34.3822C33.8846 34.4766 34.0912 34.5185 34.2976 34.5031C34.5039 34.4878 34.7021 34.4158 34.8702 34.2951L44.856 27.125H62.5343C64.4935 27.125 66.0874 25.5312 66.0874 23.5721V13.9797C67.3021 14.1036 68.2529 15.1325 68.2529 16.3793V55.4489H2.74805V16.3793C2.74805 15.0493 3.83016 13.9672 5.16019 13.9672ZM51.1102 69.6094H19.8907L23.3801 63.6216H47.6211L51.1102 69.6094ZM65.8407 61.3716H5.16019C3.83016 61.3716 2.74805 60.2895 2.74805 58.9594V57.699H68.2529V58.9594C68.2529 60.2895 67.1707 61.3716 65.8407 61.3716ZM7.62098 51.5325H32.3161C32.6145 51.5325 32.9007 51.4139 33.1116 51.2029C33.3226 50.992 33.4411 50.7058 33.4411 50.4075C33.4411 44.5704 29.7095 39.5893 24.5068 37.7224C26.4788 36.3057 27.7669 33.9944 27.7669 31.3865C27.7669 27.0865 24.2686 23.5882 19.9686 23.5882C15.6685 23.5882 12.1701 27.0865 12.1701 31.3865C12.1701 33.9944 13.4582 36.3057 15.4302 37.7224C10.2275 39.5893 6.49584 44.5705 6.49584 50.4075C6.49588 50.7058 6.61444 50.992 6.82544 51.203C7.03644 51.4139 7.3226 51.5325 7.62098 51.5325ZM14.4202 31.3865C14.4202 28.3271 16.9093 25.8382 19.9687 25.8382C23.0281 25.8382 25.5171 28.3271 25.5171 31.3865C25.5171 34.446 23.0281 36.935 19.9687 36.935C16.9093 36.935 14.4202 34.446 14.4202 31.3865ZM19.9686 39.185C25.7772 39.185 30.5692 43.6206 31.1352 49.2825H8.80195C9.36797 43.6206 14.16 39.185 19.9686 39.185ZM35.6215 20.9281H52.3866C53.4722 20.9281 54.3553 20.045 54.3553 18.9593V17.9834L58.1388 19.5425C58.3097 19.613 58.4953 19.6402 58.6792 19.6219C58.8632 19.6035 59.0397 19.5402 59.1933 19.4373C59.3469 19.3345 59.4728 19.1954 59.5598 19.0323C59.6469 18.8693 59.6924 18.6873 59.6923 18.5025V8.76305C59.6923 8.57822 59.6467 8.39624 59.5597 8.23321C59.4726 8.07017 59.3467 7.93109 59.1931 7.82827C59.0396 7.72546 58.863 7.66206 58.6791 7.6437C58.4952 7.62533 58.3096 7.65257 58.1387 7.72298L54.3555 9.28195V8.30616C54.3555 7.22053 53.4722 6.33741 52.3867 6.33741H35.6215C34.5359 6.33741 33.6528 7.22053 33.6528 8.30616V18.9593C33.6528 20.0448 34.5359 20.9281 35.6215 20.9281ZM57.4425 10.4434V16.822L54.3553 15.5499V11.7155L57.4425 10.4434ZM35.9028 8.58741H52.1055V18.678H35.9028V8.58741ZM44.004 10.2583C42.1433 10.2583 40.6295 11.7721 40.6295 13.6329C40.6295 15.4935 42.1433 17.0073 44.004 17.0073C45.8647 17.0073 47.3785 15.4935 47.3785 13.6329C47.3785 11.772 45.8648 10.2583 44.004 10.2583ZM44.004 14.7572C43.384 14.7572 42.8795 14.2528 42.8795 13.6327C42.8795 13.0127 43.3839 12.5082 44.004 12.5082C44.6242 12.5082 45.1285 13.0126 45.1285 13.6327C45.1285 14.2529 44.6241 14.7572 44.004 14.7572Z"
+                fill="#800000"
+                [attr.fill]="getStroke('virtual')"
+              />
+            </svg>
+          </span>
+          <div class="text-center text-xl font-bold mt-5">Virtual Event</div>
+          <p class="text-center">
+            An event that takes place online and attendees join using web
+            conferencing services.
+          </p>
+
+          <div
+            [class.bg-primary]="event_type === 'virtual'"
+            [class.border-primary]="event_type === 'virtual'"
+            class="mt-5 w-[24px] h-[24px] rounded-full border mx-auto border-[#A3A3A3]"
+          ></div>
+        </div>
+      </label>
+      <label
+        [class.border-primary]="event_type === 'physical'"
+        [class.text-primary]="event_type === 'physical'"
+        htmlFor="physical"
+        (click)="onChangeEvent('physical')"
+        class="cursor-pointer border-[2px]"
+      >
+        <div class="">
+          <span class="flex items-center justify-center">
+            <svg
+              width="71"
+              height="72"
+              viewBox="0 0 71 72"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M47.2553 26.5146C49.8299 23.94 46.6537 16.5897 40.1611 10.0974C33.6685 3.60504 26.3182 0.429114 23.7437 3.00375C21.1691 5.57838 24.3453 12.9286 30.8379 19.421C37.3304 25.9133 44.6808 29.0892 47.2553 26.5146Z"
+                [attr.stroke]="getStroke('physical')"
+                stroke-width="3"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M40.161 19.4208C46.6534 12.9282 49.8293 5.57789 47.2547 3.00335C44.68 0.428808 37.3298 3.60499 30.8375 10.0976C24.3451 16.5901 21.1692 23.9405 23.7438 26.515C26.3184 29.0896 33.6687 25.9134 40.161 19.4208Z"
+                [attr.stroke]="getStroke('physical')"
+                stroke-width="3"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M56.7344 57.0218H69.3906V65.6719C69.3906 68.0019 67.5019 69.8906 65.1719 69.8906H5.82812C3.49811 69.8906 1.60938 68.0019 1.60938 65.6719V57.0218H14.2656M5.82812 57.0218V21.0904H23.3868M47.6132 21.0904H65.1719V57.0218"
+                [attr.stroke]="getStroke('physical')"
+                stroke-width="3"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M14.2656 61.2405V52.803C14.2656 50.473 16.1544 48.5843 18.4844 48.5843H26.9219C29.2519 48.5843 31.1406 50.473 31.1406 52.803V61.2405H14.2656Z"
+                [attr.stroke]="getStroke('physical')"
+                stroke-width="3"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M22.7031 48.5843C26.1981 48.5843 29.0312 45.7511 29.0312 42.2562C29.0312 38.7612 26.1981 35.928 22.7031 35.928C19.2082 35.928 16.375 38.7612 16.375 42.2562C16.375 45.7511 19.2082 48.5843 22.7031 48.5843Z"
+                [attr.stroke]="getStroke('physical')"
+                stroke-width="3"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M39.8594 61.2405V52.803C39.8594 50.473 41.7481 48.5843 44.0781 48.5843H52.5156C54.8456 48.5843 56.7344 50.473 56.7344 52.803V61.2405H39.8594Z"
+                [attr.stroke]="getStroke('physical')"
+                stroke-width="3"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M48.2969 48.5843C51.7918 48.5843 54.625 45.7511 54.625 42.2562C54.625 38.7612 51.7918 35.928 48.2969 35.928C44.8019 35.928 41.9688 38.7612 41.9688 42.2562C41.9688 45.7511 44.8019 48.5843 48.2969 48.5843Z"
+                [attr.stroke]="getStroke('physical')"
+                stroke-width="3"
+                stroke-miterlimit="10"
+              />
+              <path
+                d="M39.8594 57.0218H31.1406"
+                [attr.stroke]="getStroke('physical')"
+                stroke-width="3"
+                stroke-miterlimit="10"
+              />
+            </svg>
+          </span>
+          <div class="text-center text-xl font-bold mt-5">Physical Event</div>
+          <p class="text-center">
+            An event that takes place at a physical location and attendees join
+            in person.
+          </p>
+
+          <div
+            [class.bg-primary]="event_type === 'physical'"
+            [class.border-primary]="event_type === 'physical'"
+            class="mt-5 w-[24px] h-[24px] rounded-full border mx-auto"
+          ></div>
+        </div>
+      </label>
+    </div>
+    <!-- step 2  -->
+    <div *ngIf="step == 2" class="grid grid-cols-2 gap-5">
+      <div>
+        <label for="event_name">Event Name *</label>
+        <input
+          type="text"
+          class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+          placeholder="Enter event name"
+        />
+      </div>
+      <div>
+        <label for="event_image">Event Image *</label>
+        <input
+          type="file"
+          class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+          placeholder="Enter email address"
+        />
+      </div>
+      <div class="col-span-2">
+        <label for="event_description">Event Description</label>
+        <textarea
+          name="event_description"
+          class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+          placeholder="Enter event description"
+        ></textarea>
+      </div>
+      <div>
+        <label for="event_start_date">Event Start Date</label>
+        <input
+          type="date"
+          class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+          placeholder="Enter email address"
+        />
+      </div>
+      <div>
+        <label for="event_start_time">Event Start Time</label>
+        <input
+          type="time"
+          class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+          placeholder="Enter Start Time"
+        />
+      </div>
+      <div>
+        <label for="event_end_date">Event End Date</label>
+        <input
+          type="date"
+          class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+          placeholder="Enter End Date"
+        />
+      </div>
+      <div>
+        <label for="event_end_time">Event End Time</label>
+        <input
+          type="time"
+          class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+          placeholder="Event End time"
+        />
+      </div>
+    </div>
+    <!-- step 3  -->
+    <div *ngIf="step == 3" class="">
+      <input
+        type="text"
+        class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+        placeholder="  Enter a tag that describes your event and press “ENTER”"
+      />
+      <div class="my-5">
+        <h5>Suggestions</h5>
+
+        <div class="flex items-center gap-7 mt-4 flex-wrap">
+          <div
+            class="button"
+            *ngFor="let tag of tags"
+            ngClass="border border-secondary/50 rounded-lg p-2 "
+          >
+            {{ tag }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- step 4  -->
+    <div *ngIf="step == 4" class="grid grid-cols-2 gap-5">
+      <div class="col-span-2">
+        <label for="event_description">Event Platform Link*</label>
+        <textarea
+          name="event_description"
+          class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+          placeholder="Enter event description"
+        ></textarea>
+      </div>
+
+      <div>
+        <label for="event_image">Is this a paid event or a free event?</label>
+        <input
+          type="text"
+          class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+          placeholder="Enter email address"
+        />
+      </div>
+      <div>
+        <label for="event_name">TIcket Price*</label>
+        <input
+          type="number"
+          class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+          placeholder="₦00,000.00"
+        />
+      </div>
+      <div class="">
+        <label for="event_description">Number of Available Tickets</label>
+        <input
+          type="number"
+          name="event_description"
+          class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+          placeholder="00"
+        />
+      </div>
+      <div>
+        <label for="event_end_date">Registration Closing Date</label>
+        <input
+          type="date"
+          class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+          placeholder="Closing Date"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- //bottom controls -->
+  <div class="flex items-center justify-center gap-5">
+    <button
+      *ngIf="step > 1"
+      (click)="goPrev()"
+      mat-stroked-button
+      class="!text-primary disable_hover !border-primary"
+    >
+      Back
+    </button>
+
+    <button
+      *ngIf="step < 4"
+      (click)="goNext()"
+      mat-flat-button
+      class="!bg-primary !text-white my-3 py-3"
+    >
+      Proceed
+    </button>
+    <button
+      *ngIf="step === 4"
+      (click)="submitForm()"
+      mat-flat-button
+      class="!bg-primary !text-white my-3 py-3"
+    >
+      Submit
+    </button>
+  </div>
+</div>

@@ -8,6 +8,8 @@ import { RouterLink } from '@angular/router';
 import { AuthedNavbarComponent } from './components/authed-navbar/authed-navbar.component';
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { EventDateFormatterPipe } from './pipes/event-date-formatter.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -17,7 +19,13 @@ import { EventDateFormatterPipe } from './pipes/event-date-formatter.pipe';
     EventCardComponent,
     EventDateFormatterPipe,
   ],
-  imports: [MaterialUiModule, RouterLink, CommonModule],
+  imports: [
+    MaterialUiModule,
+    RouterLink,
+    CommonModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+  ],
   exports: [
     MaterialUiModule,
     NavbarComponent,
@@ -26,6 +34,7 @@ import { EventDateFormatterPipe } from './pipes/event-date-formatter.pipe';
     AuthedNavbarComponent,
     EventCardComponent,
     EventDateFormatterPipe,
+    ReactiveFormsModule,
   ],
 })
 export class SharedModule {}

@@ -1,0 +1,85 @@
+<section>
+  <div class="center flex items-center justify-between my-3">
+    <h1 class="text-2xl font-bold mb-5 items-center flex">
+      <mat-icon routerLink="..">arrow_back_ios</mat-icon> Explore other Events
+    </h1>
+    <button
+      routerLink="/register/{{ eventId }}"
+      mat-stroked-button
+      disableRipple
+      class="!text-white disable_hover !bg-primary"
+    >
+      Register for this Event
+    </button>
+  </div>
+  <img
+    src="single_event.png"
+    alt="single event image"
+    class="h-full w-full object cover"
+  />
+</section>
+<section class="my-10 grid grid-cols-3 center gap-10">
+  <div class="col-span-2">
+    <h4 class="font-bold text-2xl">Event Description</h4>
+    <p class="text-justify text-lg font-medium">
+      Dive into the world of cutting-edge technology at the Tech Innovators
+      Summit. This immersive event is designed for tech enthusiasts,
+      entrepreneurs, and innovators alike. Join us for a day filled with
+      inspiring keynote speakers, hands-on workshops, and networking
+      opportunities with industry leaders. Discover the latest trends in
+      artificial intelligence, blockchain, cybersecurity, and more. Whether
+      you're a tech veteran or just starting your journey, the Tech Innovators
+      Summit is the ultimate destination to explore, learn, and connect in the
+      dynamic tech landscape.
+    </p>
+    <h4 class="font-bold text-2xl mt-5">Event Tags</h4>
+    <div class="flex items-center gap-7 mt-4 flex-wrap max-w-[1/2]">
+      <div
+        class="button"
+        *ngFor="let tag of tags"
+        ngClass="border border-secondary/50 rounded-lg p-2 "
+      >
+        {{ tag }}
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="bg-[#FAFAFA] p-5">
+      <div class="flex items-center justify-between">
+        <p class="text-xl text-bold text-primary">08-10 October 2023</p>
+        <p class="text-xl text-bold text-secondary">₦20,000</p>
+      </div>
+      <div class="flex flex-col gap-5">
+        <div class="flex gap-3">
+          <span>
+            <mat-icon>location_on</mat-icon>
+          </span>
+          <p>
+            Ultimate Garden, By Mobil Junction Lokogoma Expressway Gaduwa Abuja,
+            Federal Capital Territory 900109
+          </p>
+        </div>
+        <div class="flex gap-3">
+          <span>
+            <mat-icon>av_timer</mat-icon>
+          </span>
+          <p>9AM Daily</p>
+        </div>
+        <div class="flex gap-3">
+          <span>
+            <mat-icon>calendar_month</mat-icon>
+          </span>
+          <p>In 2 weeks</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="center my-10">
+  <h1 class="text-2xl font-bold mb-5">Similar Events</h1>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 gap-y-10">
+    <app-event-card *ngFor="let event of events" [eventData]="event">
+    </app-event-card>
+  </div>
+</section>

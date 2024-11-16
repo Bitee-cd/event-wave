@@ -1,0 +1,56 @@
+<div class="bg-white p-10">
+  <h5 class="text-xl font-semibold">Search Filter</h5>
+  <div class="grid grid-cols-2 gap-5">
+    <div>
+      <label for="location">Location</label>
+      <select
+        type="location"
+        class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+        placeholder="All, Lagos, Abuja"
+      ></select>
+    </div>
+    <div>
+      <label for="date">Date</label>
+      <select
+        type="location"
+        class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+        placeholder="All, Today, 2 weeks, A month"
+      ></select>
+    </div>
+    <div>
+      <label for="event_type">Event Type</label>
+      <select
+        type="location"
+        class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+        placeholder="All, Physical, Virtual"
+      ></select>
+    </div>
+    <div>
+      <label for="event_pricing">Event Pricing</label>
+      <select
+        type="location"
+        class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
+        placeholder="All, Free, Paid"
+      ></select>
+    </div>
+  </div>
+  <div class="flex items-center justify-center gap-10 mt-5">
+    <button
+      mat-dialog-close
+      mat-stroked-button
+      disableRipple
+      class="!text-primary disable_hover !bg-white !border-primary !border"
+    >
+      <mat-icon>close</mat-icon>
+      Cancel
+    </button>
+    <button
+      mat-stroked-button
+      disableRipple
+      class="!text-white disable_hover !bg-primary"
+    >
+      <mat-icon>filter_list</mat-icon>
+      Apply Filter
+    </button>
+  </div>
+</div>

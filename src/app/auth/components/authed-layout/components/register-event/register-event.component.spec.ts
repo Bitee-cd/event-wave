@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AuthedLayoutComponent } from './authed-layout.component';
+import { RegisterEventComponent } from './register-event.component';
 
-describe('AuthedLayoutComponent', () => {
-  let component: AuthedLayoutComponent;
-  let fixture: ComponentFixture<AuthedLayoutComponent>;
+describe('RegisterEventComponent', () => {
+  let component: RegisterEventComponent;
+  let fixture: ComponentFixture<RegisterEventComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AuthedLayoutComponent]
+      declarations: [RegisterEventComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AuthedLayoutComponent);
+    fixture = TestBed.createComponent(RegisterEventComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,7 +1,7 @@
 <section class="dashboard_hero min-h-[50vh] flex flex-col">
   <div class="center flex mt-auto gap-10 flex-1 items-end mb-5">
     <button
-      routerLink="/auth/login"
+      (click)="createEvent()"
       mat-stroked-button
       disableRipple
       class="!text-white disable_hover !bg-primary"
@@ -9,7 +9,7 @@
       Create an Event
     </button>
     <button
-      routerLink="/auth/login"
+      routerLink="/other-events"
       mat-stroked-button
       disableRipple
       class="!text-primary disable_hover !border-primary"

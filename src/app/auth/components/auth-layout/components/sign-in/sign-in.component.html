@@ -2,11 +2,16 @@
   <div class="w-[50%] max-w-[400px] mx-auto">
     <h1 class="h1">Sign in</h1>
     <p>Please enter the correct details</p>
-    <form class="my-5 flex flex-col gap-5">
+    <form
+      class="my-5 flex flex-col gap-5"
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+    >
       <div>
         <label for="email">Email address *</label>
         <input
           type="email"
+          formControlName="email"
           class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
           placeholder="Enter email address"
         />
@@ -14,21 +19,28 @@
       <div>
         <label for="password">Password *</label>
         <input
+          formControlName="password"
           type="password"
           class="border border-secondary/30 rounded-lg w-full p-3 mt-2"
           placeholder="Enter password "
         />
-        <p
-          routerLink="/forgot-password"
-          class="text-primary text-end mt-2 underline"
-        >
-          Forgot password?
-        </p>
       </div>
-      <button mat-flat-button class="!bg-primary !text-white py-3">
-        Sign in
-      </button>
+      <p
+        routerLink="/forgot-password"
+        class="text-primary text-end mt-2 underline"
+      >
+        Forgot password?
+      </p>
       <button
+        [disabled]="loading || loginForm.invalid"
+        mat-flat-button
+        class="!bg-primary !text-white py-3 disabled:!bg-gray-300"
+      >
+        <p class="inline-flex">
+          Sign in <mat-spinner diameter="20" *ngIf="loading"></mat-spinner>
+        </p>
+      </button>
+      <!-- <button
         mat-flat-button
         class="!text-primary !bg-white py-3 border border-primary inline-flex justify-center gap-5"
       >
@@ -70,7 +82,7 @@
         </svg>
 
         Sign in with Google
-      </button>
+      </button> -->
       <p class="text-center">
         Don't have account?
         <span

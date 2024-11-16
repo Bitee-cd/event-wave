@@ -6,8 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './event-card.component.css',
 })
 export class EventCardComponent {
-  @Input() eventData: { date: Date | string; event_name: string } = {
-    date: '',
-    event_name: '',
-  };
+  @Input() eventData!: { date: Date | string; event_name: string; id: number };
 }
