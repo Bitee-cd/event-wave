@@ -54,7 +54,6 @@ export class VerifyOtpComponent implements OnInit {
     this.submittingOtp = true;
     this.authService.verifyOtp(payload).subscribe({
       next: (response) => {
-        this.submittingOtp = false;
         this.handler.successHandler(response);
         this.router.navigate(['/auth/login']);
       },

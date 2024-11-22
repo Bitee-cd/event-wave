@@ -19,6 +19,8 @@ import { EmailPreferencesComponent } from './components/authed-layout/components
 import { LinkedAccountsComponent } from './components/authed-layout/components/account-settings-layout/components/linked-accounts/linked-accounts.component';
 import { PrivacySettingsComponent } from './components/authed-layout/components/account-settings-layout/components/privacy-settings/privacy-settings.component';
 import { VerifyOtpComponent } from './components/auth-layout/components/verify-otp/verify-otp.component';
+import { ForgotPasswordComponent } from './components/auth-layout/components/forgot-password/forgot-password.component';
+import { ChangePasswordComponent } from './components/auth-layout/components/change-password/change-password.component';
 
 const authRoutes: Routes = [
   {
@@ -28,6 +30,8 @@ const authRoutes: Routes = [
       { path: 'login', component: SignInComponent },
       { path: 'sign-up', component: SignUpComponent },
       { path: 'verify-otp', component: VerifyOtpComponent },
+      { path: 'password/forget', component: ForgotPasswordComponent },
+      { path: 'password/change', component: ChangePasswordComponent },
       { path: '', redirectTo: 'login', pathMatch: 'full' },
     ],
   },
@@ -77,6 +81,8 @@ const authRoutes: Routes = [
     LinkedAccountsComponent,
     PrivacySettingsComponent,
     VerifyOtpComponent,
+    ForgotPasswordComponent,
+    ChangePasswordComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(authRoutes), SharedModule],
 })

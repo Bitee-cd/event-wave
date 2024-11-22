@@ -13,6 +13,7 @@ import {
   provideHttpClient,
 } from '@angular/common/http';
 import { BaseUrlInterceptor } from './core/interceptors/base-url.interceptor';
+import { AuthTokenInterceptor } from './core/interceptors/auth-token.interceptor';
 import { CookieService } from 'ngx-cookie-service';
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent],
@@ -27,6 +28,7 @@ import { CookieService } from 'ngx-cookie-service';
     provideAnimationsAsync(),
     CookieService,
     { provide: HTTP_INTERCEPTORS, useClass: BaseUrlInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthTokenInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
 })

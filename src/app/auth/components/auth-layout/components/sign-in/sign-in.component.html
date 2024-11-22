@@ -25,20 +25,20 @@
           placeholder="Enter password "
         />
       </div>
-      <p
-        routerLink="/forgot-password"
+      <a
+        routerLink="/auth/password/forget"
         class="text-primary text-end mt-2 underline"
       >
         Forgot password?
-      </p>
+      </a>
       <button
         [disabled]="loading || loginForm.invalid"
         mat-flat-button
         class="!bg-primary !text-white py-3 disabled:!bg-gray-300"
       >
-        <p class="inline-flex">
+        <a class="inline-flex">
           Sign in <mat-spinner diameter="20" *ngIf="loading"></mat-spinner>
-        </p>
+        </a>
       </button>
       <!-- <button
         mat-flat-button
